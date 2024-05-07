@@ -33,15 +33,17 @@
 </div>
 
 
-{% if error %}
-<script>
-    alert('Invalid Login Credentials, Try Again...');
-</script>
-{% endif %}
-
 {% if error == "no" %}
 <script>
     alert('Logged In Successfully');
     window.location = "{% url 'Customer_home' %}";
 </script>
 {% endif %}
+
+{% if error %}
+<script>
+    alert('Invalid Login Credentials, Try Again...');
+</script>
+{% endif %}
+
+
