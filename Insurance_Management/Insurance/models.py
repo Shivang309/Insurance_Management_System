@@ -14,6 +14,9 @@ class Ajents(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=50,null=True)
     age = models.IntegerField(null=True)
+    Phone=models.IntegerField(null=True)
+    start_Time = models.CharField(max_length=20,null=True)
+    end_Time = models.CharField(max_length=20,null=True)
     
     def __str__(self):
-        return self.address
+        return self.name

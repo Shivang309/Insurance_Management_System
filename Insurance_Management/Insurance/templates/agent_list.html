@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent List</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <h1>Agents</h1>
+    <div>
+        {{ map_html | safe }}
+    </div>
+    <ul>
+        {% for agent in agents %}
+            <li>{{ agent.name }} - {{ agent.address }}</li>
+        {% endfor %}
+    </ul>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
