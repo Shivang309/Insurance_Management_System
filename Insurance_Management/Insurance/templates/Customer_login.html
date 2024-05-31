@@ -1,37 +1,26 @@
 {% include 'header.html' %}
-<div class="card shadow m-5">
-    <div class="card-body">
-        <h5 class="p-2" style="border-bottom: 2px solid orange;">
-            Login
-        </h5>
-        <div class="container-fluid">
-            <form action="" method="post">
-                {% csrf_token %} <!--use for safty purpose-->
-                <div class="form-row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="">Email ID</label>
-                            <input type="email" name="emailid" class="form-control" placeholder="Enter email Id"required>
-                        </div>
-                    </div>
+{% load static %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Customer Login</h2>
+            <p>Enter your credentials to login. Please don’t share your password with anyone. Thank you!</p>
+            <form id="loginForm" action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" class="form-control" id="email" name="emailid" placeholder="Email ID" required>
                 </div>
-                <div class="form-row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                 </div>
-                    
-                
-            
-                <input type="submit" value="login" class="m-2 px-3 btn btn-primary">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a href="forgot_password/">Forgot Password?</a>
             </form>
         </div>
     </div>
 </div>
-
 
 {% if error == "no" %}
 <script>

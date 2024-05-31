@@ -1,0 +1,55 @@
+{% include 'inner_header.html' %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1>Thank You!</h1>
+            <p>Thank you for applying. We will process your application and get back to you soon.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #17a2b8;
+        font-weight: bold;
+        text-align: center;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+        color: #333;
+        font-size: 1.2em;
+        text-align: center;
+        animation: slideIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+</style>
