@@ -38,5 +38,9 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('apply/', views.apply_policy, name='apply_policy'),
     path('Customer_login/forgot_password/', views.forgot_password, name='forgot_password'),
+<<<<<<< HEAD
     path('success_policy/', views.success_policy, name='success_policy'),
+=======
+   
+>>>>>>> 2208dcd45d8341d791f527e33c160cc3ac585651
 ]

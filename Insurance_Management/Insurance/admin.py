@@ -3,6 +3,7 @@ from .models import *
 # Register your models here.
 admin.site.register(CustomerDetail)
 admin.site.register(Ajents)
+<<<<<<< HEAD
 
 from .models import Appointment
 from .forms import AppointmentAdminForm
@@ -15,6 +16,9 @@ class AppointmentAdmin(admin.ModelAdmin):
     
 admin.site.register(Appointment, AppointmentAdmin)
 
+=======
+admin.site.register(Appointment)
+>>>>>>> 2208dcd45d8341d791f527e33c160cc3ac585651
 
 @admin.register(Policy)
 class PolicyAdmin(admin.ModelAdmin):

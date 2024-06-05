@@ -15,6 +15,10 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.contrib.auth.forms import SetPasswordForm
 from django.conf import settings
+<<<<<<< HEAD
+=======
+from django.template.loader import render_to_string
+>>>>>>> 2208dcd45d8341d791f527e33c160cc3ac585651
 
 
 # Create your views here.
@@ -102,9 +106,12 @@ def agent_list(request):
     return render(request, 'agent_list.html', {'agents': agents, 'map_html': map_html})
 def logout_success_view(request):
     return render(request, 'logout.html')
+<<<<<<< HEAD
 def success_policy(request):
     return render(request, 'success_policy.html')
 
+=======
+>>>>>>> 2208dcd45d8341d791f527e33c160cc3ac585651
 def book_appointment(request):
     if request.method == 'POST':
         form = AppointmentForm(request.POST)
@@ -162,7 +169,11 @@ def apply_policy(request):
                 customer=customer,
                 policy=policy,
             )
+<<<<<<< HEAD
             return redirect('success_policy')  # Redirect to a success page or policy list
+=======
+            return redirect('application_success')  # Redirect to a success page or policy list
+>>>>>>> 2208dcd45d8341d791f527e33c160cc3ac585651
     else:
         form = PolicyApplicationForm()
 
@@ -171,3 +182,14 @@ def apply_policy(request):
 def forgot_password(request):
     return render(request,'forgot_password.html')
 
+<<<<<<< HEAD
+=======
+def send_appointment_status_email(sender, instance, created, **kwargs):
+    if not created and instance.status == 'A':  # Only send email on status change to 'Accepted'
+        subject = 'Your Appointment has been Accepted'
+        message = render_to_string('appointment_accepted_email.html', {
+            'appointment': instance
+        })
+        recipient_email = instance.customer.user.username
+        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [recipient_email])
+>>>>>>> 2208dcd45d8341d791f527e33c160cc3ac585651
