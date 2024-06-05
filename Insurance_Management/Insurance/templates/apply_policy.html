@@ -111,3 +111,24 @@
         }
     }
 </style>
+
+<script>
+    document.getElementById('applyPolicyForm').addEventListener('submit', function(event) {
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+        var email = document.getElementById('email').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            event.preventDefault();
+        } else if (!validateEmail(email)) {
+            alert('Please enter a valid email address.');
+            event.preventDefault();
+        }
+    });
+
+    function validateEmail(email) {
+        var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return re.test(email);
+    }
+</script>

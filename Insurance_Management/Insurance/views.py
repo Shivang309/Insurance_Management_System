@@ -21,9 +21,6 @@ from django.conf import settings
 def home_page(request):
     return render(request,'home_page.html')
 
-def Success_policy(request):
-    return render(request,'after_apply_policy.html')
-
 def Customer_home(request):
     return render(request,'Customer_home.html')
 def Contact_Us(request):
@@ -105,6 +102,9 @@ def agent_list(request):
     return render(request, 'agent_list.html', {'agents': agents, 'map_html': map_html})
 def logout_success_view(request):
     return render(request, 'logout.html')
+def success_policy(request):
+    return render(request, 'success_policy.html')
+
 def book_appointment(request):
     if request.method == 'POST':
         form = AppointmentForm(request.POST)
@@ -162,7 +162,7 @@ def apply_policy(request):
                 customer=customer,
                 policy=policy,
             )
-            return redirect('application_success')  # Redirect to a success page or policy list
+            return redirect('success_policy')  # Redirect to a success page or policy list
     else:
         form = PolicyApplicationForm()
 
