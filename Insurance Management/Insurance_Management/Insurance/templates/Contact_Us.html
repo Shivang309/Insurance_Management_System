@@ -1,0 +1,60 @@
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Insurance</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/Contact_Us.css' %}">
+</head>
+<body>
+  {% comment %} <header>
+      <nav>
+          <div class="navbar-left">
+              <span class="navbar-text">Insurance Management System</span>
+          </div>
+          <div class="navbar-right">
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Register</a></li>
+                  <li><a href="#">Manager</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+      </nav>
+  </header> {% endcomment %}
+  
+
+  <main>
+      <section class="contact-form">
+          <h2>Contact Us</h2>
+          <form id="contactForm">
+              <input type="text" id="name" name="name" placeholder="Your name">
+              <input type="email" id="email" name="email" placeholder="Email address">
+              <input type="text" id="subject" name="subject" placeholder="Subject">
+              <textarea id="message" name="message" placeholder="What would you like to tell us?"></textarea>
+              <button type="submit">Send</button>
+          </form>
+      </section>
+
+      <section class="contact-info text-center">
+          <h2>Contact Information</h2>
+          <p><i class="fas fa-map-marker-alt"></i> Address: 1234 Street, City, Country</p>
+          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@onlineinsurance.com">info@onlineinsurance.com</a></p>
+          <p><i class="fas fa-phone"></i> Phone: +1234567890</p>
+          <p><i class="fas fa-globe"></i> Social Media:</p>
+          <ul class="social-media-list">
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+          <p class="contact-info-description">For any inquiries or assistance, feel free to contact us using the information provided above. Our team is ready to help you with any questions you may have regarding our insurance services.</p>
+      </section>  
+  </main>
+  <script src="{% static 'JS/Contact_Us.js' %}"></script>
+
+</body>
+</html>
