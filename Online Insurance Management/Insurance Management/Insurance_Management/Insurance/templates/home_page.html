@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Management System</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url("https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631017.jpg?w=1060&t=st=1716704221~exp=1716704821~hmac=398a5c932cef89dadbe947abea97ef4469bc55449ba394f5fceef6c591a3ab5a") no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+            background-attachment: fixed;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .hero button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #17a2b8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .hero button:hover {
+            background-color: #138496;
+            transform: translateY(-3px);
+        }
+
+        .content {
+            padding: 50px 15px;
+            text-align: center;
+        }
+
+        .content h2 {
+            color: #17a2b8;
+            font-weight: bold;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+            width: 300px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: #17a2b8;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card-content p {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .footer {
+            background-color: #17a2b8;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer .container div {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .footer h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        .footer a {
+            color: #17a2b8;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer .social-icons a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer .social-icons a:hover {
+            color: #17a2b8;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    {% include 'header.html' %}
+
+    <div class="hero">
+        <div>
+            <h1>Welcome to Our Insurance Management System</h1>
+            <p>Your trusted partner for all insurance needs.</p>
+            <button onclick="scrollToContent()">Learn More</button>
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="card">
+                <img src="/static/Images/general.jpg" alt="Life Insurance">
+                <div class="card-content">
+                    <h3>Life Insurance</h3>
+                    <p>We offer a range of life insurance products tailored to secure your future and your loved ones.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/static/Images/family.jpg" alt="Health Insurance">
+                <div class="card-content">
+                    <h3>Health Insurance</h3>
+                    <p>Our health insurance plans ensure that you get the best medical care without financial stress.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/static/Images/car.jpg" alt="Car Insurance">
+                <div class="card-content">
+                    <h3>Car Insurance</h3>
+                    <p>Get comprehensive car insurance plans that cover all your vehicle needs and drive with peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div>
+                <h3>About Us</h3>
+                <p>We are a leading provider of insurance solutions, committed to helping you secure your future.</p>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>Email: support@insurance.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Insurance Ave, City, Country</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 Insurance Management System. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        function scrollToContent() {
+            document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
