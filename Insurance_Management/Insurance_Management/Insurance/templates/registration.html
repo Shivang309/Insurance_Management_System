@@ -1,0 +1,84 @@
+{% include 'header.html' %}
+<style>
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://img.freepik.com/premium-photo/young-man-holding-phone-with-insurance-icon_218381-5216.jpg?w=1060');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.4;
+    }
+</style>
+<div class="card shadow m-5">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">
+            Create an Account
+        </h5>
+        <div class="container-fluid">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" name="firstname" id="firstName" class="form-control" placeholder="Enter First Name" pattern="[A-Za-z]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" name="lastname" id="lastName" class="form-control" placeholder="Enter Last Name" pattern="[A-Za-z]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" name="Phone_number" id="phone" class="form-control" placeholder="Enter Phone Number" pattern="[0-9]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" name="Address" id="location" class="form-control" placeholder="Enter Address" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="email">Email ID</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter email ID" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="pwd" id="password" class="form-control" placeholder="Enter Password" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" name="cpwd" id="confirmPassword" class="form-control" placeholder="Enter Password again" required>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" class="m-2 px-3 btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if error == "no" %}
+<script>
+    alert('Signup Successful');
+    window.location = "{% url 'Customer_login' %}";
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong, Try Again...');
+</script>
+{% endif %}
