@@ -1,0 +1,9 @@
+<h1>Manage Appointments</h1>
+<ul>
+    {% for appointment in appointments %}
+        <li>
+            {{ appointment }} - {{ appointment.get_status_display }}
+            <a href="{% url 'update_appointment_status' appointment.id %}">Update Status</a>
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Status - Insurance Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #17a2b8;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .status-pending {
+            color: #ff9933;
+        }
+
+        .status-accepted {
+            color: #28a745;
+        }
+
+        .status-rejected {
+            color: #dc3545;
+        }
+
+        .status-unknown {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    {% include 'inner_header.html' %}
+    <div class="container">
+        <h1>Your Appointments</h1>
+        {% if appointments %}
+            <ul>
+            {% for appointment in appointments %}
+                <li>
+                    Appointment on {{ appointment.appointment_date|date:"F d, Y, g a" }} - Status:
+                    <span class="status-{{ appointment.status|lower }}">{{ appointment.get_status_display }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>You have no appointments.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
